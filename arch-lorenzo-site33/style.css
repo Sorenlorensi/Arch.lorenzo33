@@ -1,0 +1,25 @@
+:root{--bg:#f6f4ef;--ink:#1c1b19;--dark:#1b1a18;--gold:#b08d57;--muted:#6b675f}
+*{box-sizing:border-box}
+body{margin:0;font:17px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.15;margin:0 0 .5em}
+a{color:inherit}:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}section{padding:96px 0}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid #e3dfd6}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font:500 1.2rem "Playfair Display",serif;text-decoration:none}
+nav{display:flex;gap:22px;font-size:.85rem}nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--gold);color:#1b1a18;padding:12px 22px;border:0;text-decoration:none;font:500 .85rem Inter,sans-serif;cursor:pointer}
+.btn.line{background:none;border:1px solid currentColor;color:inherit}
+.hero{background:var(--dark);color:#f6f4ef;padding:140px 0 110px}
+.hero h1{font-size:clamp(2.2rem,6vw,4.4rem);max-width:15ch}.hero em{color:var(--gold)}.hero p{max-width:48ch;color:#cfcac0}
+.dark{background:var(--dark);color:#f6f4ef}
+.grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid p{color:var(--muted);font-size:.92rem}.dark .grid p{color:#b9b4a9}
+.proj{display:grid;gap:28px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.proj img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#ddd}.proj small{color:var(--muted)}
+form{display:grid;gap:16px;background:#fff;padding:32px}label{font-size:.8rem;color:var(--muted);display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:10px;border:1px solid #cfcac0;background:#fff;width:100%}
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.check{display:flex;gap:8px;align-items:flex-start}.check input{width:auto}
+#msg{min-height:1.4em;font-size:.9rem}footer{padding:40px 0;font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.hero h1{animation:in .8s ease both}@keyframes in{from{opacity:0;transform:translateY(12px)}}}

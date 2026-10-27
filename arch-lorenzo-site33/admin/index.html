@@ -1,0 +1,42 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Painel Arch.Lorenzo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font:15px/1.5 Inter,system-ui,sans-serif;background:#f0eee9;color:#1c1b19}.w{max-width:1000px;margin:0 auto;padding:0 24px 60px}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;margin:0}
+.top{background:#f6f4ef;border-bottom:1px solid #e3dfd6}.top .w{display:flex;justify-content:space-between;align-items:center;height:72px;padding-bottom:0}
+.sm{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#6b675f}
+button,input,select,textarea{font:inherit;padding:10px 12px;border:1px solid #cfcac0;background:#fff;color:inherit}
+button{cursor:pointer;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:#f6f4ef}
+.p{background:#b08d57;border-color:#b08d57;color:#fff}.k{background:#1b1a18;color:#fff;border-color:#1b1a18}
+.tabs{display:flex;gap:8px;margin:32px 0}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}
+.row{display:flex;gap:14px;align-items:center;background:#f6f4ef;border:1px solid #e3dfd6;padding:12px;margin:10px 0}.row img{width:112px;height:80px;object-fit:cover;background:#ddd}.row>div{flex:1}.row h3{font:500 1.15rem "Playfair Display",serif;margin:2px 0}
+form,dialog{background:#f6f4ef}label{display:grid;gap:4px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#6b675f}input,select,textarea{width:100%;text-transform:none;letter-spacing:0}
+dialog{border:0;padding:32px;width:min(680px,94vw);max-height:92vh}dialog::backdrop{background:rgba(0,0,0,.6)}
+.f{display:grid;gap:16px}.g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.c{display:flex;gap:8px;align-items:center}.c input{width:auto}
+.box{background:#f6f4ef;padding:24px;margin-bottom:20px;display:grid;gap:16px}input[type=color]{padding:2px;height:42px}
+.pv{max-height:80px;max-width:200px;display:block;margin-top:6px}[hidden]{display:none!important}:focus-visible{outline:2px solid #b08d57}
+#st{min-height:1.4em;margin:12px 0;font-size:.9rem}
+</style></head><body>
+<div class="top"><div class="w"><div><h1 style="display:inline;font-size:1.4rem">Arch.Lorenzo</h1> &nbsp;<span class="sm">Painel do escritório</span></div>
+<div><a class="sm" href="/" target="_blank">Ver site</a> &nbsp; <button id="out" hidden>Sair</button></div></div></div>
+<div class="w"><div id="st" role="status"></div>
+<form id="login" class="f box" hidden><label>E-mail<input id="em" type="email" required autocomplete="username"></label><label>Senha<input id="pw" type="password" required autocomplete="current-password"></label><button class="p">Entrar</button></form>
+<div id="app" hidden>
+<div class="tabs"><button id="tl" class="k">Projetos</button><button id="ts">Site: textos, cores e imagens</button><button id="tc">Contatos recebidos</button></div>
+<div id="v-p"><div class="head"><div><h2>Projetos do portfólio</h2><span class="sm" style="text-transform:none;letter-spacing:0">Cadastre, edite e exclua os projetos exibidos no site.</span></div><button id="new" class="p">+ Novo projeto</button></div><div id="list"></div></div>
+<div id="v-s" hidden><div class="head"><h2>Aparência e conteúdo do site</h2><button id="ssave" class="p">Salvar alterações</button></div>
+<div class="box"><h2>Cores</h2><div class="g" id="cols"></div></div>
+<div class="box"><h2>Imagens</h2><div class="g"><label>Imagem de destaque (topo)<input type="file" id="i-hero" accept="image/jpeg,image/png,image/webp"><img id="p-hero" class="pv" alt="" hidden></label><label>Logotipo (opcional)<input type="file" id="i-logo" accept="image/jpeg,image/png,image/webp"><img id="p-logo" class="pv" alt="" hidden></label></div></div>
+<div class="box"><h2>Textos</h2><div class="f" id="txt"></div></div></div>
+<div id="v-c" hidden></div></div></div>
+<dialog id="dlg"><form id="pf" class="f" method="dialog"><h2>Projeto</h2><span class="sm" style="text-transform:none;letter-spacing:0">As imagens são publicadas no portfólio do site.</span>
+<input type="hidden" name="id"><label>Título<input name="title" required maxlength="150" placeholder="Residência Ipê"></label>
+<div class="g"><label>Categoria<select name="category"><option>Residencial</option><option>Escritório</option><option>Comercial</option><option>Paisagismo</option></select></label><label>Local<input name="location" placeholder="Jardins, São Paulo"></label></div>
+<div class="g"><label>Metragem<input name="area" placeholder="420 m²"></label><label>Ano<input name="year" type="number" placeholder="2025"></label><label>Ordem<input name="sort" type="number" value="0"></label></div>
+<label>Descrição<textarea name="description" rows="5" maxlength="5000" placeholder="Conte a história do projeto…"></textarea></label>
+<label>Imagem de capa<input type="file" name="cover" accept="image/jpeg,image/png,image/webp"><img id="p-cover" class="pv" alt="" hidden></label>
+<label>Galeria<input type="file" name="gallery" accept="image/jpeg,image/png,image/webp" multiple></label>
+<div class="g"><label class="c"><input type="checkbox" name="published" checked> Publicado</label><label class="c"><input type="checkbox" name="featured"> Destaque</label></div>
+<div style="text-align:right"><button type="button" id="cx">Cancelar</button> <button class="p">Salvar projeto</button></div></form></dialog>
+<script src="../config.js"></script><script src="admin.js"></script></body></html>
